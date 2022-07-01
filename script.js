@@ -47,3 +47,25 @@ var questions = [
       correct: "A"
   }
 ]
+
+//declares variables n 
+var start = document.querySelector("#start");
+var sec = 75;
+var quiz = document.querySelector("#quiz");
+var thetime = document.querySelector("#thetime");
+var seehighscores = document.querySelector("#viewhighscores")
+var questionTitle = document.querySelector("#title");
+//letters
+var choice1 = document.querySelector("#A");
+var choice2 = document.querySelector("#B");
+var choice3 = document.querySelector("#C");
+var choice4 = document.querySelector("#D");
+
+
+
+var lastQuestionIndex = questions.length - 1;
+var currentQuestionIndex = 0;
+const questionTime = 15;
+var count = 75;
+var score = 0;
+var TIMER;
