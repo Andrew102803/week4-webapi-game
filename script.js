@@ -161,3 +161,64 @@ function wrongAnswer() {
           }, removeAfter);
       })(removeAfter);
   }
+//queryselectors woooooooooooooo
+  //basicly just selects the stuff it says
+  var correctIncorrect = document.querySelector("#rightorwrong");
+  var addInitials = document.querySelector("#addinitials");
+  var destroy = document.querySelector('#clearhighscores-button');
+  var highactualscores = document.querySelector('#highscores');
+  var topRow = document.querySelector('#toprow');
+  var goBack = document.querySelector('#goback-button');
+  var highscoreview = JSON.parse(localStorage.getItem("highscoreList")) || [];
+  addInitials.addEventListener("click", function (event) {
+    event.preventDefault();
+  
+    var initials = document.querySelector("#initials").value;
+  
+  //put letters in or else
+    if (initials === "") {
+      alert("Think your funny huh punk?, put somehting in or there will be fbi at your house eta 5 mins");
+  //puts the number on the funny and sorts it
+    } else {
+      let newbignumber = { 'initials': initials, 'score': score };
+  
+      highscoreview.push(newbignumber);
+      highscoreview.sort((a, b) => b.score - a.score);
+      highscoreview.splice(5);
+      localStorage.setItem('highscoreList', JSON.stringify(highscoreview));
+  
+  
+  
+      showdanumbers();
+    }
+    console.log(initials);
+    console.log(score);
+  
+  });
+  
+  //Highscore Page
+  //basic display work
+  function showdanumbers() {
+    scoreContainer.style.display = "none";
+
+    quiz.style.display = "none";
+
+    thetime.style.display = "none";
+
+    start.style.display = "none";
+
+    seehighscores.style.display = "none";
+
+    
+
+    document.querySelector('#toprow').style.display = "none";
+
+    highactualscores.style.display = "block";
+  
+    highscoreview = JSON.parse(localStorage.getItem("highscoreList")) || [];
+    console.log(highscoreview);
+    highscoreview.forEach(function(highScore) {
+     
+      $('#highscoreslist').append(highScore.initials + "   =    Score: ", + highScore.score +"<br>");
+    })
+  }
