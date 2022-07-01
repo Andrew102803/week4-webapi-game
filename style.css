@@ -1,1 +1,35 @@
 
+#highscoreslist {
+
+    background-color: rgb(70, 0, 128);
+    color: red;
+  }
+  
+ 
+
+  #rightorwrong {
+    font-style: italic;
+    color: black;
+    font-size: 90px;
+  }
+  
+  #highscores {
+    padding: 25px 0px 15px 0px;
+    background-color: red;
+   
+    
+  }
+  
+  body{
+     background-image: url(https://cdn.discordapp.com/attachments/880931768973271050/987405221162532964/8B267358-92FE-45CD-AA09-5C6D81237A4A.gif);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 200px;
+  position: relative;
+  color: black;
+  }
+  
+
+ 
