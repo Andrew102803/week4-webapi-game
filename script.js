@@ -103,3 +103,61 @@ function startQuiz() {
   quiz.style.display = "block";
 
 }
+//score guide
+function checkAnswer(answer){
+  if( answer === questions[currentQuestionIndex].correct){
+
+      score += 5;
+      correctAnswer();
+  }else{
+
+      sec -= 15;
+       wrongAnswer();
+  }
+  count = 0;
+  if(currentQuestionIndex < lastQuestionIndex){
+      currentQuestionIndex++;
+      showQuestion();
+  }else{
+
+      clearInterval(time);
+      showScore();
+  }
+}
+
+// final score display i mean it displays the final score
+function showScore(){
+  quiz.style.display = "none";
+
+  topRow.style.display = "none";
+
+  start.style.display = "none";
+
+  scoreContainer.style.display = "block";
+
+  document.getElementById('finalscore').innerHTML = score;
+}
+
+//does basic stuff to put in the correct answer score
+function correctAnswer() {
+  var removeAfter = 0;
+      document.querySelector('#rightorwrong').innerHTML = "Right!";
+      removeAfter += 600;
+      (function (removeAfter) {
+          setTimeout(function () {
+              document.querySelector("#rightorwrong").innerHTML = "";
+          }, removeAfter);
+      })(removeAfter);
+  }
+
+//same thing but with wrong
+function wrongAnswer() {
+  var removeAfter = 0;
+      document.querySelector('#rightorwrong').innerHTML = "Wrong!";
+      removeAfter += 600;
+      (function (removeAfter) {
+          setTimeout(function () {
+              document.querySelector("#rightorwrong").innerHTML = "";
+          }, removeAfter);
+      })(removeAfter);
+  }
