@@ -222,3 +222,22 @@ function wrongAnswer() {
       $('#highscoreslist').append(highScore.initials + "   =    Score: ", + highScore.score +"<br>");
     })
   }
+//removes the high score
+  destroy.addEventListener("click", function (event) {
+    localStorage.clear();
+    document.getElementById("highscoreslist").innerHTML = "";
+  
+  });
+  //returns to beggining
+  goBack.addEventListener("click", function (event) {
+    event.preventDefault();ß
+    showQuestion()
+  
+  
+  });
+  //does what it says it shows the
+  seehighscores.addEventListener("click", function (event) {
+    showdanumbers()
+  
+  
+  })
