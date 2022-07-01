@@ -69,3 +69,37 @@ const questionTime = 15;
 var count = 75;
 var score = 0;
 var TIMER;
+
+//shows questions to html
+function showQuestion() {
+  var currentQ = questions[currentQuestionIndex];
+  title.innerHTML = "<h4>" + currentQ.questionTitle + "</h4>";
+  choice1.innerHTML = currentQ.choice1;
+  choice2.innerHTML = currentQ.choice2;
+  choice3.innerHTML = currentQ.choice3;
+  choice4.innerHTML = currentQ.choice4;
+  console.log(score);
+}
+
+//time thing
+function myTimer() {
+  document.getElementById('timer').innerHTML = sec;
+  sec--;
+  if (sec == -1) {
+      clearInterval(time);
+      showScore();
+  }
+}
+
+
+//Start button it darts the quiz
+startBtn.addEventListener("click", startQuiz);
+
+function startQuiz() {
+  start.style.display = "none";
+  myTimer()
+  time = setInterval(myTimer, 1000);
+  showQuestion();
+  quiz.style.display = "block";
+
+}
